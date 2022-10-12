@@ -1,0 +1,16 @@
+.Pagination {
+    font-family: sans-serif;
+    text-align: center;
+}
+td,
+th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+}
+
+.actions {
+    margin: 8px 0 ;
+}
+.btn {
+    margin-left: 5px;
+}

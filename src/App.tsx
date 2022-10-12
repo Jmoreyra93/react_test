@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.css";
+import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import Header from "./components/Headers";
+import Inicio from "./components/Index";
+import Pagination from "./components/StarWarsPagination"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter >
+            <Header title="Api Client Demo" />
+            <nav>
+                <ul className="nav">
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/">Inicio</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/starwarspagination">Api Star Wars Pagination</Link>
+                    </li>
+                </ul>
+            </nav>
+            <main className="container" >
+                <Routes>
+                    <Route path="/" element={<Inicio />} />
+                    <Route path="/starwarspagination" element={<Pagination />}/>
+
+                </Routes>
+            </main>
+        </BrowserRouter>
+    );
 }
 
 export default App;
